@@ -1,0 +1,395 @@
+/*******************************************************************************
+ * style.scss
+ *
+ * This file shouldn't directly contain any SCSS code, instead it only serves to
+ * combine the SCSS contained in other Sass partials through @import directives.
+ *
+ * BASE............Styling for common HTML and Drupal elements.
+ * LAYOUT..........Styles for the page structure that contain components.
+ * COMPONENTS......Components, their modifiers and sub-components.
+ ******************************************************************************/
+/*******************************************************************************
+ * _utils.scss
+ *
+ * Sass offers come very useful features, these include variables functions and
+ * mixins. Extensions such as Compass and Susy can also be used to provide extra
+ * functions and mixins to be used throughout the theme. This file acts as a
+ * single place for defining these things, which can then be accessed by
+ * importing _utils.scss where required. The following should be defined in this
+ * file:
+ * - Custom Sass mixins for the theme.
+ * - Custom Sass functions for the theme.
+ * - Overriding the default variables provided by extensions such as Compass.
+ * - Defining new variables for:
+ *      - Colors.
+ *      - Font sizes and families.
+ *      - Layout and grid sizing.
+ ******************************************************************************/
+/*******************************************************************************
+ * _base.scss
+
+ * Base styles define the default look for HTML and common Drupal elements.
+ *
+ * These rules will generally be made up of element selectors for HTML elements
+ * such as headings, paragraphs and lists. Common Drupal elements such as form
+ * items, collapsible fieldsets and messages should be included in this partial.
+ *
+ * The styleguide module (http://drupal.org/project/styleguide) gives you a good
+ * overview of Drupals common elements for styling. By setting a solid baseline
+ * before adding any more specific customisations you ensure that as any new
+ * features are added they will be correctly styled without any extra work.
+ ******************************************************************************/
+/*******************************************************************************
+ * _layout.scss
+ *
+ * The layout of the major regions (usually, but not necessarily Drupal regions)
+ * that components will be placed within. Layout styles for the theme's
+ * components should not be placed here and should instead be kept with the
+ * relevant SCSS for that component.
+ ******************************************************************************/
+/*******************************************************************************
+ * _components.scss
+ *
+ * Imports more partials that contain full components (modules in SMACSS), their
+ * sub-components and modifiers.
+ *
+ * Components are discrete parts of your page that should sit within the regions
+ * of your layouts. You should try to abstract your components as much as
+ * possible to promote reuse throughout the theme. Components should be flexible
+ * enough to respond to any width and should never rely on context
+ * (e.g. .sidebar-first .component) for styling. This allows modules to be
+ * placed throughout the theme with no risk of them breaking.
+ *
+ * If you find you need to change the look of a component depending on it's
+ * context you should avoid using context based classes at all costs. Instead it
+ * is better to add another "modifier" class to the component to alter the
+ * styling. Again, this promotes reuse.
+ *
+ * Sub-components are the individual parts that make up a component. As a
+ * general rule, adding a class to target a sub-component is a much better
+ * option than using descendant selectors or element selectors. In many cases
+ * sub-components can be made more reusable by making them components in their
+ * own right, so they can then be used within other components.
+ *
+ * Almost everything that doesn't belong in base should be made a component.
+ * Here's some common examples throughout Drupal:
+ *
+ * - Blocks
+ * - Content Types - For example, you may have a generic node component that
+ *      contains sub-components for the submitted by line and links. Specific
+ *      components can then be created for each content type to style the
+ *      specifics of each. Finally, by using entity view modes you can easily
+ *      apply modifications based on the .node-[view-mode] classes.
+ * - Forms - For instance the log in form.
+ * - Views - Each views output style could be made into a component, the content
+ *       of each row should be provided my a view mode styled by it's component
+ *       CSS. Exposed filter forms, views pagers and other views elements are
+ *       also good candidates for components.
+ ******************************************************************************/
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* GENERAL */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Codystar', cursive;
+  font-size: 23px;
+  font-weight: normal;
+}
+
+.site-name {
+  background: #000;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.site-name a {
+  color: #ddd;
+}
+
+.site-logo {
+  display: none;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  text-transform: uppercase;
+  border-bottom: 3px solid #333;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+}
+
+.form-item label, .form-actions label {
+  display: block;
+  font-weight: normal;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* HEADER */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.site-logo {
+  float: left;
+}
+
+.site-name {
+  float: left;
+}
+
+.l-branding {
+  width: 100%;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NAVIGATION */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.l-region--navigation ul.menu {
+  background: #eee;
+  padding: 0px;
+  margin: 8px 0;
+}
+
+.l-region--navigation ul.menu li.leaf {
+  background: #eee;
+  float: left;
+  width: 100%;
+}
+
+.l-region--navigation ul.menu li.leaf:hover {
+  background: #333;
+  transition: background .3s;
+  -moz-transition: background .3s;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+}
+
+.l-region--navigation ul.menu li.leaf a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 10px 18px;
+}
+
+.l-region--navigation ul.menu li.leaf a.active {
+  border-bottom: 3px solid #333;
+}
+
+.l-region--navigation ul.menu li.leaf a:hover {
+  color: #eee;
+  transition: color .3s;
+  -moz-transition: color .3s;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* MAIN CONTENT */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.l-content {
+  width: 66%;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* SIDEBAR SECOND */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.l-region--sidebar-second {
+  width: 34%;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* FOOTER */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.l-footer {
+  background-color: #333;
+}
+
+.l-footer .l-region--footer ul.menu {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+.l-footer .l-region--footer ul.menu li.leaf {
+  float: left;
+  width: 100%;
+}
+
+.l-footer .l-region--footer ul.menu li.leaf:hover {
+  background: #ddd;
+  transition: background .3s;
+  -moz-transition: background .3s;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+}
+
+.l-footer .l-region--footer ul.menu li.leaf a {
+  color: #eee;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 10px 18px;
+}
+
+.l-footer .l-region--footer ul.menu li.leaf a:hover {
+  color: #333;
+  transition: color .3s;
+  -moz-transition: color .3s;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NODE */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+article.node header h2 {
+  background-color: #333;
+  font-family: 'Arapay', serif;
+  font-size: 23px;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: none;
+  margin: 0;
+  padding: 5px 8px;
+  border: none;
+}
+
+article.node header h2 a {
+  color: #ddd;
+}
+
+article.node .node__content {
+  padding: 8px;
+  margin-bottom: 23px;
+  background-color: #eee;
+}
+
+article.node-teaser .node__content {
+  margin-bottom: 8px;
+}
+
+article.node-teaser header h2 {
+  font-size: 17px;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* VIEWS */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.view-tweets ul {
+  padding: 0;
+  margin-top: 10px;
+}
+
+.view-tweets li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #eee;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* OTHER */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+div.codeblock {
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #ddd;
+}
+
+p.submitted {
+  padding: 8px 0 8px 8px;
+  margin: 0;
+  background: #ddd;
+  color: #333;
+}
+
+.views-field-web-intents {
+  margin-top: 8px;
+}
+
+.views-field-web-intents a {
+  background: #ddd;
+  padding: 2px 5px;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+.views-field-web-intents a:hover {
+  background: #333;
+  color: #ddd;
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+@media (min-width: 680px) {
+  h1 {
+    font-size: 68px;
+  }
+  .site-logo {
+    display: block;
+  }
+  .site-name {
+    background: none;
+    text-align: center;
+    width: auto;
+    margin: 8px 0;
+  }
+  .site-name a {
+    color: #000;
+  }
+  .l-region--navigation ul.menu {
+    margin: 13px 0 8px 0;
+  }
+  .l-region--navigation ul.menu li.leaf {
+    list-style: none;
+    display: inline-block;
+    width: auto;
+    float: none;
+  }
+  .l-region--navigation ul.menu li.leaf a {
+    font-size: 23px;
+    padding: 13px 20px;
+  }
+  .l-footer .l-region--footer ul.menu li.leaf {
+    list-style: none;
+    display: inline-block;
+    width: auto;
+    float: none;
+  }
+  .l-footer .l-region--footer ul.menu li.leaf a {
+    font-size: 20px;
+    padding: 20px;
+  }
+}

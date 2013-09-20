@@ -1,0 +1,117 @@
+/*******************************************************************************
+ * _layout.scss
+ *
+ ******************************************************************************/
+.l-header,
+.l-main {
+  *zoom: 1;
+  max-width: 790px;
+  _width: 790px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.l-region--header {
+  width: 66.10169%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-footer {
+}
+
+.l-region--footer {
+  max-width: 790px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-header:after,
+.l-main:after,
+.l-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-branding {
+  width: 32.20339%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+.l-region--navigation {
+  clear: both;
+}
+
+.l-region--highlighted,
+.l-region--help,
+.l-region--sidebar-second {
+  margin-bottom: 20px;
+}
+
+.sidebar-second .l-content {
+  width: 100%;
+  float: left;
+  margin-right: 0;
+}
+.sidebar-second .l-region--sidebar-second {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  clear: right;
+}
+
+@media (min-width: 680px) {
+  .l-header,
+  .l-main {
+    max-width: 790px;
+  }
+
+  .l-branding {
+    width: 36.70886%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+
+  .l-region--header {
+    width: 62.02532%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .sidebar-second .l-content {
+    width: 65.68354%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+
+  .sidebar-second .l-region--sidebar-second {
+    width: 33.05063%;
+    float: right;
+    margin-right: 0;
+    clear: none;
+  }
+
+  .l-content {
+    width: 49.36709%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+
+  .l-region--sidebar-second {
+    width: 33.05063%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+
+  .l-region--sidebar-second {
+    float: right;
+    margin-right: 0;
+    clear: none;
+  }
+
+}
