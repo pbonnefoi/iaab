@@ -1,0 +1,5 @@
+name = IAAB Commons
+description = Commons tools for IAAB
+core = 7.x
+configure = admin/structure/views
+project = "iaab_commons"

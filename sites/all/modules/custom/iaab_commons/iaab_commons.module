@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Primarily Drupal hooks and tools for IAAB
+ */
+
+function iaab_commons_theme($existing, $type, $theme, $path) {
+  return array(
+  );
+}
+
+function iaab_commons_block_info() {
+  $blocks['drupal_member_badge'] = array(
+    'info' => t('Drupal Member Badge'),
+  );
+
+  return $blocks;
+}
+
+function iaab_commons_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'drupal_member_badge':
+      $img_path = url(drupal_get_path('theme', 'seamaster') . '/images/drupal_member_badge.png', array('absolute' => true));
+      $block['subject'] = t('Syndicate');
+      $block['content'] = '<a href="https://drupal.org/user/1319492"><img src="' . $img_path . '" alt="Drupal Member Badge"></a>';
+      break;
+  }
+
+  return $block;
+}

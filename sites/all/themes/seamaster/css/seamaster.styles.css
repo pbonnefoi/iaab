@@ -87,6 +87,16 @@
  *       also good candidates for components.
  ******************************************************************************/
 
+/*
+ * COLOR
+ *
+ * PANTONE 427 C #D0D3D4
+ * PANTONE 429 C #A2AAAD
+ * PANTONE 432 C #455560
+ * PANTONE 433 C #162732
+ */
+
+
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* GENERAL */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -94,25 +104,27 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 12px;
-  color: #333;
+  color: #162732;
   margin: 0;
 }
 
 h1 {
-  font-family: 'Codystar', cursive;
+  font-family: 'Arapay', serif;
   font-size: 23px;
+  font-style: italic;
   font-weight: normal;
+  text-transform: none;
 }
 
 .site-name {
-  background: #000;
+  background: #455560;
   text-align: center;
   width: 100%;
   margin: 0;
 }
 
 .site-name a {
-  color: #ddd;
+  color: #FFFFFF;
 }
 
 .site-logo {
@@ -128,7 +140,12 @@ h2 {
   font-size: 20px;
   font-style: normal;
   text-transform: uppercase;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid #162732;
+  margin: 8px 0;
+}
+
+h2.block__title {
+  color: #162732;
 }
 
 h2 a {
@@ -136,7 +153,11 @@ h2 a {
 }
 
 a {
-  color: #000;
+  color: #455560;
+}
+
+.active {
+  color: #162732;
 }
 
 .form-item label, .form-actions label {
@@ -158,6 +179,8 @@ a {
 
 .l-branding {
   width: 100%;
+  background: url('../images/banner_2.jpg') #162732 top center no-repeat;
+  height: 180px;
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -165,19 +188,19 @@ a {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .l-region--navigation ul.menu {
-  background: #eee;
+  background: #455560;
   padding: 0px;
   margin: 8px 0;
 }
 
 .l-region--navigation ul.menu li.leaf {
-  background: #eee;
+  background: #455560;
   float: left;
   width: 100%;
 }
 
 .l-region--navigation ul.menu li.leaf:hover {
-  background: #333;
+  background: #D0D3D4;
   transition: background .3s;
   -moz-transition: background .3s;
   -webkit-transition: background .3s;
@@ -185,6 +208,7 @@ a {
 }
 
 .l-region--navigation ul.menu li.leaf a {
+  color: #FFFFFF;
   display: block;
   font-weight: bold;
   text-decoration: none;
@@ -194,11 +218,12 @@ a {
 }
 
 .l-region--navigation ul.menu li.leaf a.active {
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid #162732;
 }
 
 .l-region--navigation ul.menu li.leaf a:hover {
-  color: #eee;
+  color: #162732;
+  border-bottom: 3px solid #162732;
   transition: color .3s;
   -moz-transition: color .3s;
   -webkit-transition: color .3s;
@@ -221,12 +246,16 @@ a {
   width: 34%;
 }
 
+#block-iaab-commons-drupal-member-badge {
+  text-align: center;
+}
+
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* FOOTER */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .l-footer {
-  background-color: #333;
+  background-color: #162732;
 }
 
 .l-footer .l-region--footer ul.menu {
@@ -241,7 +270,7 @@ a {
 }
 
 .l-footer .l-region--footer ul.menu li.leaf:hover {
-  background: #ddd;
+  background: #D0D3D4;
   transition: background .3s;
   -moz-transition: background .3s;
   -webkit-transition: background .3s;
@@ -249,7 +278,7 @@ a {
 }
 
 .l-footer .l-region--footer ul.menu li.leaf a {
-  color: #eee;
+  color: #FFFFFF;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
@@ -258,7 +287,7 @@ a {
 }
 
 .l-footer .l-region--footer ul.menu li.leaf a:hover {
-  color: #333;
+  color: #162732;
   transition: color .3s;
   -moz-transition: color .3s;
   -webkit-transition: color .3s;
@@ -270,7 +299,7 @@ a {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 article.node header h2 {
-  background-color: #333;
+  background-color: #455560;
   font-family: 'Arapay', serif;
   font-size: 23px;
   font-style: italic;
@@ -282,7 +311,7 @@ article.node header h2 {
 }
 
 article.node header h2 a {
-  color: #ddd;
+  color: #FFFFFF;
 }
 
 article.node .node__content {
@@ -308,7 +337,7 @@ article.node-teaser header h2 {
   margin-top: 10px;
 }
 
-.view-tweets li {
+.view-tweets ul li {
   list-style: none;
   margin-bottom: 10px;
   padding: 8px;
@@ -323,14 +352,14 @@ div.codeblock {
   border: none;
   margin-top: 8px;
   margin-bottom: 8px;
-  background-color: #ddd;
+  background-color: #D0D3D4;
 }
 
 p.submitted {
   padding: 8px 0 8px 8px;
   margin: 0;
-  background: #ddd;
-  color: #333;
+  background: #D0D3D4;
+  color: #162732;
 }
 
 .views-field-web-intents {
@@ -338,22 +367,75 @@ p.submitted {
 }
 
 .views-field-web-intents a {
-  background: #ddd;
+  color: #162732;
+  background: #D0D3D4;
   padding: 2px 5px;
   margin-right: 4px;
   text-decoration: none;
 }
 
 .views-field-web-intents a:hover {
-  background: #333;
-  color: #ddd;
+  background: #455560;
+  color: #FFFFFF;
   transition: all .3s;
   -moz-transition: all .3s;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
 }
 
+#isotope-options ul {
+  padding: 0 8px;
+}
+
+#isotope-options ul li {
+  float: left;
+  list-style: none;
+}
+
+#isotope-options ul li a {
+  display: block;
+  color: #162732;
+  background: #D0D3D4;
+  text-decoration: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+  padding: 2px 5px;
+}
+
+#isotope-options ul li a:hover {
+  background: #455560;
+  color: #FFFFFF;
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+.isotope-element {
+  background: #455560;
+  width: 162px;
+  height: 162px;
+  line-height: 162px;
+  margin: 4px;
+  text-align: center;
+}
+
+.isotope-element .views-field-title .field-content {
+  width: 130px;
+  vertical-align:middle;
+  display:inline-block;
+  line-height:1.2;
+}
+
+.isotope-element .views-field-title .field-content a {
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 @media (min-width: 680px) {
+
   h1 {
     font-size: 68px;
   }
@@ -367,10 +449,11 @@ p.submitted {
     margin: 8px 0;
   }
   .site-name a {
-    color: #000;
+    color: #455560;
   }
   .l-region--navigation ul.menu {
     margin: 13px 0 8px 0;
+    text-align: center;
   }
   .l-region--navigation ul.menu li.leaf {
     list-style: none;
