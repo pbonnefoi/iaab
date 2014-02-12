@@ -14,6 +14,9 @@ function iaab_commons_block_info() {
   $blocks['drupal_member_badge'] = array(
     'info' => t('Drupal Member Badge'),
   );
+  $blocks['about_the_author'] = array(
+    'info' => t('About the author'),
+  );
 
   return $blocks;
 }
@@ -26,6 +29,9 @@ function iaab_commons_block_view($delta = '') {
       $img_path = url(drupal_get_path('theme', 'seamaster') . '/images/drupal_member_badge.png', array('absolute' => true));
       $block['subject'] = t('Syndicate');
       $block['content'] = '<a href="https://drupal.org/user/1319492"><img src="' . $img_path . '" alt="Drupal Member Badge"></a>';
+      break;
+    case 'about_the_author':
+      # code...
       break;
   }
 

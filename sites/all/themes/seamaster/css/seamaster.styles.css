@@ -179,8 +179,6 @@ a {
 
 .l-branding {
   width: 100%;
-  background: url('../images/banner_2.jpg') #162732 top center no-repeat;
-  height: 180px;
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -434,6 +432,11 @@ p.submitted {
   text-transform: uppercase;
 }
 
+.logo {
+  background: url('../images/small_banner.png') top center no-repeat #10171d;
+  height: 130px;
+}
+
 @media (min-width: 680px) {
 
   h1 {
@@ -474,5 +477,9 @@ p.submitted {
   .l-footer .l-region--footer ul.menu li.leaf a {
     font-size: 20px;
     padding: 20px;
+  }
+  .logo {
+    background: url('../images/banner_2.jpg') top center no-repeat;
+    height: 180px;
   }
 }
